@@ -597,5 +597,45 @@ def mean(args):
    return tot/len(args)
 print(mean((1,2,3,4,5,6)))
 
+# #### Lists & Mutability #####
+# L = [1,2,3]
+# L[2] = 5
+# print(L)
 
-    
+L = [2,1,3]
+L.append(5)
+L= L.append(5)
+print(L)
+#  #TRY yourself## what's the value of L1,L2,L3
+L1=['re']
+L2=['mi']
+L3=['do']
+L4= L1 + L2 ## [re, mi]#
+L3.append(L4)
+L=L1.append(L3) 
+print(L)
+
+def make_ordered_list(n):
+    """n is a positive int returns a list containing all line in 
+    order from o to n (inclusive)"""
+    mylist =[]
+    for i in range(0,n+1):
+        mylist.append(i)
+    return mylist
+print(make_ordered_list(2))
+
+def remove_elem(L, e):
+    """L is a list e is object returns a new list with elements in the same order as 
+    L but without any elements equal to 3."""
+    newlist =[]
+    for i in L:
+        # i is 1 then 2 then 2 then 2
+        if i != e:
+            newlist.append(i)
+        return newlist
+L= [1,2,2,2]
+print(remove_elem(L, 2))
+L=[1,2,2,2]
+print(remove_elem(L, 1))
+L= [1,2,2,2]
+print(remove_elem(L, 0))
