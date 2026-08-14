@@ -538,4 +538,64 @@ def div(a,b):
         return a/b
 print('denom was 0.')
 res = calc(add,2,3)
+
+
 ### Lec 9 Lambda Functions, Tuples, and Lists #########
+def do_twice(n,fn):
+    return fn(fn(n))
+print(do_twice(3,lambda x: x**2 ))
+
+######### Tuples #########
+b = (4,) 
+print(type(b))
+print(b)
+seq = (2,'a',4,(1,2)) #o-2, 1-'a', 2- 4,3-(1,2)
+print(len(seq))
+print(seq[3])
+print(seq[-1])
+print(seq[3][0])
+# print(seq[4])p # tuple index out of range 
+print(seq[1])
+print(seq[-2:])
+print(seq[1:4:2])
+print(seq[:-1])
+print(seq[1:3])
+
+for e in seq:
+    print(e)
+
+def quotient_and_remainder(x,y):
+    q = x//y
+    r = x % y
+    return(q,r)
+both = quotient_and_remainder(10,3)
+print("both:", both)
+(quot, rem)= quotient_and_remainder(5,2)
+print('quotient is:', quot)
+print('remainder is:', rem)
+##try yourself ###
+def char_counts(s):
+    """ s is a string of lowercase chars return a tuple where the first 
+    element is the number of vowels in s and the second element is the 
+     number of consonants in s """
+    vowels = 'aeiou' 
+    (c, v)=(0, 0)
+    for char in s:
+        if char in vowels:
+            v += 1
+    else:
+        c +=1
+    return (v, c)
+
+print(char_counts('apple'))
+print(char_counts('bits'))
+
+def mean(args):
+   tot = 0
+   for a in args:
+       tot += a 
+   return tot/len(args)
+print(mean((1,2,3,4,5,6)))
+
+
+    
