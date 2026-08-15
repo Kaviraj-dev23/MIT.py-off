@@ -632,10 +632,37 @@ def remove_elem(L, e):
         # i is 1 then 2 then 2 then 2
         if i != e:
             newlist.append(i)
-        return newlist
+    return newlist
 L= [1,2,2,2]
 print(remove_elem(L, 2))
 L=[1,2,2,2]
 print(remove_elem(L, 1))
 L= [1,2,2,2]
 print(remove_elem(L, 0))
+
+def count_words(sen):
+    """sen is a string representing a sentence returns how many 
+    words are in s(i.e, a word is a sequence of characters between spaces.)"""
+    L1 = sen.split(' ')
+    return len(L1)
+s = "hello it's me"
+print(count_words(s))
+s = '123   45'
+print(count_words(s))
+
+# L = [1, 3, 4]
+# L = L.sort()
+# print(L)
+
+def sort_words(sen):
+    """sen is a string reprsenting a sentence returns a 
+    list containing all the 
+    words in sen but aorted in alphabetical order."""
+    L = sen.split(' ')
+    # L.sort()
+    # return L
+    return sorted(L)   ### other way to get that###
+s = "hey this is Kavi"
+print(sort_words(s))
+
+
