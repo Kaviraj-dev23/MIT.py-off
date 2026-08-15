@@ -665,4 +665,38 @@ def sort_words(sen):
 s = "hey this is Kavi"
 print(sort_words(s))
 
-
+range(4)
+range(2,9,2)
+L= [1,2,3,4]
+for i in range (len(L)):
+    L.append(i)
+    print(L)
+### another way ##
+# L = [1,2,3,4]
+# i  = 0
+# for e in L:
+        #### never stop it do loop until we stop##
+#     L.append(i)
+#     i += 1
+#     print(L)
+#Combining Lists##
+L1= [2,1,3]
+L2=[4,5,6]
+L3= L1+ L2
+print(L3)
+L1.extend([0,6])
+print(L1)
+L2.extend([[1,2],[3,4]])
+print(L2)
+##Combining##
+L = [1,2,3,4]
+for e in L:
+    L = L+ L
+    print(L)
+L = [1,4,5]
+print(id(L))
+L.append(8)
+print(id(L))
+L.clear()
+print(L)
+print(id(L))
