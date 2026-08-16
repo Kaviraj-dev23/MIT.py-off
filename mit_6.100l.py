@@ -730,3 +730,32 @@ L1 = [10,20,30,40]
 L2 = [10,20,50,60]
 remove_dups(L1, L2)
 print(L1)
+### Lec 12 Comprehensions, Functions as Objects, Testing and Debugging ###
+def f(expr,old_list, test = lambda x: True):
+    new_list = []
+    for e in old_list:
+        if test(e):
+            new_list.append(expr(e))
+    return new_list
+[e**2 for e in range((6))]
+print([e**2 for e in range(6)])
+print([e**2 for e in range(8) if e%2 == 0])
+print([[e,e**2] for e in range(4) if e%2 != 0])
+## epsilon as parameter ##
+# def bisection_root_new(x, epsilon): ## epsilon as default parameter##
+def bisection_root_new(x, epsilon=0.01): ## epsilon as keyword parameter##
+    num_guesses = 0
+    low = 0
+    high = x
+    guess = (high + low)/2.0
+    while abs(guess**2- x)>=epsilon:
+        if guess**2 < x:
+            low = guess
+        else:
+            high = guess
+        guess = (high+ low)/2.0
+        num_guesses += 1
+    print('num_guesses =', num_guesses)
+    return guess
+print(bisection_root_new(56, 0.01))
+print(bisection_root_new(90, 1))
