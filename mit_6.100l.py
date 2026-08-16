@@ -700,3 +700,33 @@ print(id(L))
 L.clear()
 print(L)
 print(id(L))
+###Lec 11- Aliasing and Cloning##
+def remove_all(L, e):
+    """L is a list 
+    mutates L to remove all elements in L that are equal to e returns
+    none. """
+    Lnew = L[:]
+    L.clear()
+    for n in Lnew:
+        if e != n:
+            L.append(e)
+Lin =[1,2,2,2]
+remove_all(Lin, 2)
+print(Lin)
+def remove_all (L, e):
+    """L is a list mutates L to remove all elements in L that are equals
+     to e returns none. """
+    for elem in L[:]:
+        if elem == e:
+            L.remove(e)
+Lin = [1,2,2,2]
+remove_all(Lin, 2)
+print(Lin)
+def remove_dups (L1, L2):
+    L1_copy = L1[:]
+    for e in L1_copy:
+        L1.remove(e)
+L1 = [10,20,30,40]
+L2 = [10,20,50,60]
+remove_dups(L1, L2)
+print(L1)
