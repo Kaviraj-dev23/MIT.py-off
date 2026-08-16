@@ -759,3 +759,39 @@ def bisection_root_new(x, epsilon=0.01): ## epsilon as keyword parameter##
     return guess
 print(bisection_root_new(56, 0.01))
 print(bisection_root_new(90, 1))
+## debugging##
+def is_pal(x):
+    """returns True is list x is a palindrome and False otherwise """
+    temp = x
+    temp.reverse
+    if temp == x:
+        return True
+    else:
+        return False
+print(is_pal(list('abcba')))
+print(is_pal(list('ab')))
+##added print debug###
+def is_pal(x):
+    """returns True is list x is a palindrome and False otherwise """
+    temp = x
+    temp.reverse
+    print(temp, x)
+    if temp == x:
+        return True
+    else:
+        return False
+print(is_pal(list('ab')))
+##another print###
+def is_pal(x):
+    """returns True is list x is a palindrome and False otherwise """
+    temp = x[:] ### copy method##
+    # temp = x
+    print('before reverse', temp, x)
+    # temp.reverse
+    temp.reverse()  ###added () for getting 'b' 'a'
+    print('after reverse', temp, x)
+    if temp == x:
+        return True ## after reverse should be 'b''a'
+    else:
+        return False
+print(is_pal(list('abcba')))
