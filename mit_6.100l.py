@@ -835,18 +835,70 @@ print(sum_digits('123abc'))
 #     except:
 #         print('bug in user input')
 # divide_nums2()
-def divide_nums3():
-    try:
-        a = int(input('tell me one number: '))
-        b = int(input('tell me another number: '))
-        print('a/b = ', a/b)
-        print('a+b = ', a+b)
-    except ValueError:
-        print("could not convert to a number. ")
-    except ZeroDivisionError:
-        print("can't divide by zero")
-        print("a/b = infinty")
-        print("a+b =", a+b)
-    except:
-        print("something went wrong.")
-divide_nums3()
+# def divide_nums3():
+#     try:
+#         a = int(input('tell me one number: '))
+#         b = int(input('tell me another number: '))
+#         print('a/b = ', a/b)
+#         print('a+b = ', a+b)
+#     except ValueError:
+#         print("could not convert to a number. ")
+#     except ZeroDivisionError:
+#         print("can't divide by zero")
+#         print("a/b = infinty")
+#         print("a+b =", a+b)
+#     except:
+#         print("something went wrong.")
+#     else:
+#         print('success') ### we can add else inside an it will follow except# 
+# divide_nums3()
+
+## you try it ## lec 13 
+def pairwise_div(Lnum, Ldenom):
+     """Lnum and Ldenom are non-empty lists of equal lengths containing numbers
+         Returns a new list whose elements are the pairwise 
+          division of an element in Lnum by an element in Ldenom. 
+            Raise a ValueError if Ldenom contains 0. """
+     L = []
+                #  L = [Lnum[i]/Ldenom[i] for in  range (len(Lnum))]  
+        ## other way##
+     if 0 in Ldenom:
+         raise ValueError
+     for i in range(len(Lnum)):
+         ## i is 0,,1,2,3.....
+        try:
+             L.append(Lnum[i]/Ldenom[i])
+        except:
+            raise ValueError('nice message')
+     return L
+L1 = [4,5,6]
+L2= [1,2,3]
+print(pairwise_div(L1, L2))
+## Assertion #### example 
+def pairwise_div(Lnum, Ldenom):
+    """ Lnum and Ldenom are non-empty lists of equal lengths
+        containing numbers
+    Returns a new list whose elements are the pairwise 
+    division of an element in Lnum by an element in Ldenom. 
+    Raise a ValueError if Ldenom contains 0. """
+    assert len(Lnum) == len(Ldenom), 'lengths diff'## EQUAL ##
+    assert len(Lnum) !=0 and len(Ldenom)!=0, 'empty list'## NON EMPTY # len(a) ==len(b) len(a)  > 0
+    L=[]
+    for i in range (len(Lnum)):
+        try:
+            L.append(Lnum[i]/(Ldenom[i]))
+        except: 
+            raise ValueError('nice mesage')
+    return L
+L1 = [1,2,3]
+L2=[4,5,6]
+print(pairwise_div(L1, L2))
+
+
+    
+ 
+
+
+
+
+
