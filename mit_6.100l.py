@@ -795,3 +795,58 @@ def is_pal(x):
     else:
         return False
 print(is_pal(list('abcba')))
+### Lec 13 Exceptions and Assertions ###
+def sum_digits(s):
+    """"S is  non-empty string containing digits returns sum of all 
+    characters that are digits"""
+    total = 0
+    for char in s:
+        if char in '0123456789':
+            val = int(char)
+            total += val
+    return total
+print(sum_digits('123'))
+print(sum_digits('123abc'))
+## same code with Exceptions ##
+def sum_digits(s):
+    """"S is  non-empty string containing digits returns sum of all 
+    characters that are digits"""
+    total = 0
+    for char in s:
+        try:
+            val = int(char)
+            total += val
+        except:
+            print("couldn't print chracter", chr)
+    return total
+print(sum_digits('123abc'))
+
+# def divide_nums1():
+#     # a = int(input("tell me one number: "))
+#     # b = int(input("tell me another number: " ))
+#     print(a/b)
+# divide_nums1()
+
+# def divide_nums2():
+#     try:
+#         a = int(input("tell me one number: "))
+#         b = int(input("tell me another number: "))
+#         print(a/b)
+#     except:
+#         print('bug in user input')
+# divide_nums2()
+def divide_nums3():
+    try:
+        a = int(input('tell me one number: '))
+        b = int(input('tell me another number: '))
+        print('a/b = ', a/b)
+        print('a+b = ', a+b)
+    except ValueError:
+        print("could not convert to a number. ")
+    except ZeroDivisionError:
+        print("can't divide by zero")
+        print("a/b = infinty")
+        print("a+b =", a+b)
+    except:
+        print("something went wrong.")
+divide_nums3()
