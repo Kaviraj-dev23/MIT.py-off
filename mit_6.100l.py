@@ -882,7 +882,8 @@ def pairwise_div(Lnum, Ldenom):
     division of an element in Lnum by an element in Ldenom. 
     Raise a ValueError if Ldenom contains 0. """
     assert len(Lnum) == len(Ldenom), 'lengths diff'## EQUAL ##
-    assert len(Lnum) !=0 and len(Ldenom)!=0, 'empty list'## NON EMPTY # len(a) ==len(b) len(a)  > 0
+    assert len(Lnum) !=0 and len(Ldenom)!=0, 'empty list'## 
+                            # NON EMPTY # len(a) ==len(b) len(a)  > 0
     L=[]
     for i in range (len(Lnum)):
         try:
@@ -893,10 +894,33 @@ def pairwise_div(Lnum, Ldenom):
 L1 = [1,2,3]
 L2=[4,5,6]
 print(pairwise_div(L1, L2))
+                     # Lec 14: Dictionaries##
+def find_grades(grades, students):
+    """grades is a dict mapping student names (str) to grades(str) students is 
+    a list of student nmes returns a list containing the
+      grades for students (in same order)"""
+    Lnew= []
+    for elem in students:
+        grade = grades[elem]
+        Lnew.append(grade)
+    return Lnew
+d = {'ana' : 'B', 'matt' : 'C', 'john': 'B', 'katy' : 'A'}
+print(find_grades(d, ['matt', 'katy']))
 
-
-    
- 
+def find_in_L(Ld, k):
+    """ Ld is a list of dicts
+    k is an int
+    Returns True if k is a key in any dicts of Ld and False otherwise """
+    for d in Ld:
+        # d is k1, v1
+        if k in d:
+            return True
+    return False
+d1 = {1:2, 3:4, 5:6}
+d2 = {2:4, 4:6}
+d3 = {1:1, 3:9, 4:16, 5:25}
+print(find_in_L([d1, d2, d3], 2))  # returns True
+print(find_in_L([d1, d2, d3], 25))  # returns False
 
 
 
