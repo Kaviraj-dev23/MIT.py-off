@@ -956,3 +956,10 @@ def get_average(data, what):
 # all_data.append(data[stud[what]])
 print(get_average(my_d, 'mq'))  # Output: 7.0  -> (10 + 8 + 3) / 3
 print(get_average(my_d, 'ps'))
+######### Lec 15 Recursion ######
+def mult(a,b):
+    return a *b
+result= mult(9,5)
+print(result)
+
+
