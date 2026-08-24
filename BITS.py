@@ -4,5 +4,6 @@ def factorial(n):
     if n==0:
         return n
     return n*factorial(n-1)
-for i in range(9):
+for i in range(8):
     print(f"{i}! =", factorial(i))
+
