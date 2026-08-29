@@ -35,7 +35,19 @@ def calculate_factorial(n):
 
 print(calculate_factorial(5))
 
+# name = input("Enter name: ")
+# age = int(input("Enter age: "))
+# print("User:", name, "Age next year:", age + 1)
+items = ["alpha", "beta", "gamma"]
+total_count = len(items)      # 3
 
+for i in range(total_count):  # iterates i = 0, 1, 2
+    print(i, items[i])
+
+scores = [88, 42, 95, 61]
+total = sum(scores)          # 286
+highest = max(scores)        # 95
+ordered = sorted(scores)     # [42, 61, 88, 95] (scores remains untouched)
 
 
 
