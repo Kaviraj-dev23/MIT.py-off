@@ -965,4 +965,4 @@ print(get_average(my_d, 'ps'))
 a=7
 b=6
 print(a+b)
-
+print(a**b)
